@@ -1,22 +1,30 @@
-/* styles.css */
+/* Estilos Gerais */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.6;
+    color: #ffffff;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #4CAF50;
+    justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+    align-items: center; /* Centraliza verticalmente os itens */
+    padding: 25px 3%;
+    background-color: #0080ff;
     color: white;
 }
 
+header .logo {
+    display: flex;
+    align-items: center; /* Centraliza a imagem verticalmente dentro do contêiner */
+}
+
 header .logo img {
-    height: 50px;
+    height: 35px; /* Altura da imagem */
+    margin-right: 10px; /* Espaçamento opcional entre a logo e o texto (se houver) */
 }
 
 nav ul {
@@ -34,55 +42,115 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
 }
 
 .hero {
-    background: url('hero-bg.jpg') no-repeat center center/cover;
-    height: 100vh;
+    position: relative; /* Permite posicionar o pseudo-elemento */
+    height: 700px; /* Altura da seção igual à altura da tela */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
+    color: rgb(255, 255, 255); /* Texto branco para contraste */
+    overflow: hidden; /* Evita que o desfoque ultrapasse os limites da seção */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background-image: url(''); /* Caminho da imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a seção */
+    background-position: center; /* Centraliza a imagem */
+    filter: blur(3px); /* Aplica o desfoque */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+    padding: 300px;
+    border-radius: 80px;
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem desfocada */
+    max-width: 800px; /* Limita a largura do conteúdo */
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
 .btn {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #1abc9c;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.about, .services, .contact {
-    padding: 50px 20px;
+.btn:hover {
+    background-color: #0044ff;
+}
+
+.subscription {
+    padding: 50px 10%;
     text-align: center;
-}
-
-.services {
     background-color: #f4f4f4;
 }
 
-.service-item {
+.subscription form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.subscription label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.subscription input, .subscription button {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 footer {
-    background-color: #333;
+    background-color: #2c3e50;
     color: white;
     text-align: center;
     padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
+
+footer .footer-content {
+    margin-bottom: 20px;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+    color: #1abc9c;
+}
+
+

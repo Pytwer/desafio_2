@@ -1,0 +1,212 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 3%;
+    background-color: #0080ff;
+    color: white;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+/* Estilos do Formulário */
+.form {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.form h1 {
+    text-align: center;
+    color: #0080ff;
+    margin-bottom: 20px;
+}
+
+.form h2 {
+    color: #0080ff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0080ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1abc9c;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.row > div {
+    flex: 1;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terms input {
+    width: auto;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+/* Estilos Específicos para a Imagem */
+.form-content {
+    padding: 20px;
+}
+
+.form-content h1 {
+    font-size: 24px;
+    color: #0080ff;
+    margin-bottom: 20px;
+}
+
+.form-content h2 {
+    font-size: 20px;
+    color: #0080ff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.form-content label {
+    font-size: 16px;
+    color: #333;
+}
+
+.form-content input, .form-content select {
+    font-size: 14px;
+    color: #555;
+}
+
+.form-content button {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.form-content .row {
+    margin-bottom: 15px;
+}
+
+.form-content .terms {
+    margin-top: 20px;
+}
+/* Estilos para as opções de trilhas */
+.trilhas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.trilha-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    padding: 50px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.trilha-option:hover {
+    border-color: #0080ff;
+}
+
+.trilha-option input[type="radio"] {
+    display: none; /* Esconde o input radio padrão */
+}
+
+.trilha-option img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.trilha-option span {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo quando uma opção é selecionada */
+.trilha-option input[type="radio"]:checked + img {
+    border: 2px solid #0080ff;
+}
