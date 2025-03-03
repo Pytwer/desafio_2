@@ -130,8 +130,9 @@ input[type="file"] {
 /* Estilos para as opções de trilhas */
 .trilhas {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-wrap: wrap; /* Permite que as opções quebrem para a próxima linha */
+    gap: 15px; /* Espaçamento entre as opções */
+    justify-content: flex-start; /* Alinha as opções à esquerda */
 }
 
 .trilha-option {
@@ -140,20 +141,21 @@ input[type="file"] {
     align-items: center;
     border: 3px solid #ccc; /* Borda padrão */
     border-radius: 8px;
-    padding: 20px; /* Reduzi o padding para melhorar a aparência */
+    padding: 20px; /* Espaçamento interno */
     cursor: pointer;
     transition: border-color 0.3s, background-color 0.3s;
+    width: calc(50% - 7.5px); /* Largura de cada opção (2 por linha) */
+    box-sizing: border-box; /* Garante que o padding não afete a largura */
 }
-
 .trilha-option input[type="radio"] {
     display: none; /* Esconde o input radio padrão */
 }
-
 .trilha-option img {
     width: 100px;
     height: 100px;
     object-fit: cover;
 }
+
 
 .trilha-option span {
     margin-top: 10px;
@@ -163,14 +165,14 @@ input[type="file"] {
 }
 
 /* Estilo quando uma opção é selecionada */
-.trilha-option input[type="radio"]:checked + img + span {
-    border-color: #0080ff; /* Muda a cor da borda */
-    background-color: #e6f7ff; /* Adiciona um fundo destacado */
+
+.trilha-option.selected {
+    border-color: #0080ff;
+    background-color: #e6f7ff;
 }
 
-/* Efeito ao passar o mouse */
 .trilha-option:hover {
-    border-color: #0080ff; /* Muda a cor da borda ao passar o mouse */
+    border-color: #0080ff;
 }
 
 /* Estilos para os campos de upload */
