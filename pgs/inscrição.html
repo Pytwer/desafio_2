@@ -58,9 +58,15 @@
                         <label for="phone">Telefone:</label>
                         <input type="tel" id="phone" name="phone" required>
                     </div>
+                </div>
+                <div class="row">
                     <div>
                         <label for="identity">Documento de identidade:</label>
-                        <input type="file" id="identity" name="identity" required>
+                        <div class="file-upload">
+                            <img id="identity-image" src="/img/upload.png" alt="Upload Documento de Identidade" onclick="document.getElementById('identity').click()">
+                            <img id="clique-aqui-image" src="/img/cliqueaqui.png" alt="Clique aqui para enviar" onclick="document.getElementById('identity').click()">
+                            <input type="file" id="identity" name="identity" required style="display: none;">
+                        </div>
                     </div>
                 </div>
 
@@ -100,7 +106,11 @@
                 <div class="row">
                     <div>
                         <label for="residence">Comprovante de residência:</label>
-                        <input type="file" id="residence" name="residence" required>
+                        <div class="file-upload">
+                            <img id="residence-image" src="/img/upload.png" alt="Upload Comprovante de Residência" onclick="document.getElementById('residence').click()">
+                            <img id="clique-aqui-residence" src="/img/cliqueaqui.png" alt="Clique aqui para enviar" onclick="document.getElementById('residence').click()">
+                            <input type="file" id="residence" name="residence" required style="display: none;">
+                        </div>
                     </div>
                 </div>
 

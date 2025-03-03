@@ -62,12 +62,12 @@ nav ul li a:hover {
 
 .form h1 {
     text-align: center;
-    color: #0080ff;
+    color: #000000;
     margin-bottom: 20px;
 }
 
 .form h2 {
-    color: #0080ff;
+    color: #000000;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -127,46 +127,6 @@ input[type="file"] {
     padding: 5px;
 }
 
-/* Estilos Específicos para a Imagem */
-.form-content {
-    padding: 20px;
-}
-
-.form-content h1 {
-    font-size: 24px;
-    color: #0080ff;
-    margin-bottom: 20px;
-}
-
-.form-content h2 {
-    font-size: 20px;
-    color: #0080ff;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.form-content label {
-    font-size: 16px;
-    color: #333;
-}
-
-.form-content input, .form-content select {
-    font-size: 14px;
-    color: #555;
-}
-
-.form-content button {
-    font-size: 16px;
-    padding: 10px 20px;
-}
-
-.form-content .row {
-    margin-bottom: 15px;
-}
-
-.form-content .terms {
-    margin-top: 20px;
-}
 /* Estilos para as opções de trilhas */
 .trilhas {
     display: flex;
@@ -178,15 +138,11 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid #ccc;
+    border: 3px solid #ccc; /* Borda padrão */
     border-radius: 8px;
-    padding: 50px;
+    padding: 20px; /* Reduzi o padding para melhorar a aparência */
     cursor: pointer;
-    transition: border-color 0.3s;
-}
-
-.trilha-option:hover {
-    border-color: #0080ff;
+    transition: border-color 0.3s, background-color 0.3s;
 }
 
 .trilha-option input[type="radio"] {
@@ -207,6 +163,45 @@ input[type="file"] {
 }
 
 /* Estilo quando uma opção é selecionada */
-.trilha-option input[type="radio"]:checked + img {
-    border: 2px solid #0080ff;
+.trilha-option input[type="radio"]:checked + img + span {
+    border-color: #0080ff; /* Muda a cor da borda */
+    background-color: #e6f7ff; /* Adiciona um fundo destacado */
+}
+
+/* Efeito ao passar o mouse */
+.trilha-option:hover {
+    border-color: #0080ff; /* Muda a cor da borda ao passar o mouse */
+}
+
+/* Estilos para os campos de upload */
+.file-upload {
+    display: flex;
+    flex-direction: column; /* Altera o layout para vertical */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 750px; /* Largura do contêiner */
+    height: auto; /* Altura automática para acomodar as imagens */
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px; /* Aumentei o padding para melhor espaçamento */
+    transition: border-color 0.3s;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o contêiner */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    gap: 10px; /* Espaçamento entre as imagens */
+}
+
+.file-upload img {
+    width: 20%; /* Largura da imagem */
+    height: 20%; /* Altura automática para manter a proporção */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    transition: transform 0.3s;
+}
+
+.file-upload:hover img {
+    transform: scale(0.9); /* Efeito de escala ao passar o mouse */
+}
+
+.file-upload:hover {
+    border-color: #0080ff; /* Muda a cor da borda ao passar o mouse */
 }
