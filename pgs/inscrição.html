@@ -19,140 +19,148 @@
             </ul>
         </nav>
     </header>
-    <section id="home" class="form">
-        <div class="form-content">
-            <h1>Formulário de Inscrição</h1>
-            <form action="/pgs/inscrição.html" method="post">
-                <h2>Informações do participante</h2>
+    <div class="container">
+        <!-- Coluna do formulário -->
+        <div class="form-column">
+            <section id="home" class="form">
+                <div class="form-content">
+                    <h1>Formulário de Inscrição</h1>
+                    <form action="/pgs/inscrição.html" method="post">
+                        <h2>Informações do participante</h2>
 
-                <label for="name">Nome completo:</label>
-                <input type="text" id="name" name="name" required>
+                        <label for="name">Nome completo:</label>
+                        <input type="text" id="name" name="name" required>
 
-                <div class="row">
-                    <div>
-                        <label for="birthdate">Data de nascimento:</label>
-                        <input type="date" id="birthdate" name="birthdate" required>
-                    </div>
-                    <div>
-                        <label for="cpf">CPF:</label>
-                        <input type="text" id="cpf" name="cpf" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <label for="gender">Sexo:</label>
-                        <select id="gender" name="gender" required>
-                            <option value="feminino">Feminino</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <label for="phone">Telefone:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <label for="identity">Documento de identidade:</label>
-                        <div class="file-upload">
-                            <img id="identity-image" src="/img/upload.png" alt="Upload Documento de Identidade" onclick="document.getElementById('identity').click()">
-                            <img id="clique-aqui-image" src="/img/cliqueaqui.png" alt="Clique aqui para enviar" onclick="document.getElementById('identity').click()">
-                            <input type="file" id="identity" name="identity" required style="display: none;">
+                        <div class="row">
+                            <div>
+                                <label for="birthdate">Data de nascimento:</label>
+                                <input type="date" id="birthdate" name="birthdate" required>
+                            </div>
+                            <div>
+                                <label for="cpf">CPF:</label>
+                                <input type="text" id="cpf" name="cpf" required>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <h2>Endereço residencial</h2>
-
-                <div class="row">
-                    <div>
-                        <label for="cep">CEP:</label>
-                        <input type="text" id="cep" name="cep" required>
-                    </div>
-                    <div>
-                        <label for="street">Rua:</label>
-                        <input type="text" id="street" name="street" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <label for="number">Número:</label>
-                        <input type="text" id="number" name="number" required>
-                    </div>
-                    <div>
-                        <label for="city">Cidade:</label>
-                        <input type="text" id="city" name="city" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <label for="state">Estado:</label>
-                        <input type="text" id="state" name="state" required>
-                    </div>
-                </div>
-
-                <h2>Comprovante de residência</h2>
-
-                <div class="row">
-                    <div>
-                        <label for="residence">Comprovante de residência:</label>
-                        <div class="file-upload">
-                            <img id="residence-image" src="/img/upload.png" alt="Upload Comprovante de Residência" onclick="document.getElementById('residence').click()">
-                            <img id="clique-aqui-residence" src="/img/cliqueaqui.png" alt="Clique aqui para enviar" onclick="document.getElementById('residence').click()">
-                            <input type="file" id="residence" name="residence" required style="display: none;">
+                        <div class="row">
+                            <div>
+                                <label for="gender">Sexo:</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="feminino">Feminino</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="row">
+                            <div>
+                                <label for="phone">Telefone:</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label for="identity">Documento de identidade:</label>
+                                <div class="file-upload">
+                                    <img id="identity-image" src="/img/upload.png" alt="Upload Documento de Identidade" onclick="document.getElementById('identity').click()">
+                                    <img id="clique-aqui-image" src="/img/cliqueaqui.png" alt="Clique aqui para enviar" onclick="document.getElementById('identity').click()">
+                                    <input type="file" id="identity" name="identity" required style="display: none;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Endereço residencial</h2>
+
+                        <div class="row">
+                            <div>
+                                <label for="cep">CEP:</label>
+                                <input type="text" id="cep" name="cep" required>
+                            </div>
+                            <div>
+                                <label for="street">Rua:</label>
+                                <input type="text" id="street" name="street" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div>
+                                <label for="number">Número:</label>
+                                <input type="text" id="number" name="number" required>
+                            </div>
+                            <div>
+                                <label for="city">Cidade:</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div>
+                                <label for="state">Estado:</label>
+                                <input type="text" id="state" name="state" required>
+                            </div>
+                        </div>
+
+                        <h2>Comprovante de residência</h2>
+
+                        <div class="row">
+                            <div>
+                                <label for="residence">Comprovante de residência:</label>
+                                <div class="file-upload">
+                                    <img id="residence-image" src="/img/upload.png" alt="Upload Comprovante de Residência" onclick="document.getElementById('residence').click()">
+                                    <img id="clique-aqui-residence" src="/img/cliqueaqui.png" alt="Clique aqui para enviar" onclick="document.getElementById('residence').click()">
+                                    <input type="file" id="residence" name="residence" required style="display: none;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Trilhas de aprendizagem</h2>
+
+                        <div class="trilhas">
+                            <label class="trilha-option">
+                                <input type="radio" name="trilha" value="frontend" required>
+                                <img src="/img/front.png" alt="Programação Front-end">
+                                <span>Programação Front-end</span>
+                            </label>
+                            <label class="trilha-option">
+                                <input type="radio" name="trilha" value="backend" required>
+                                <img src="/img/backend.png" alt="Programação Back-end">
+                                <span>Programação Back-end</span>
+                            </label>
+                            <label class="trilha-option">
+                                <input type="radio" name="trilha" value="games" required>
+                                <img src="/img/games.png" alt="Programação de Jogos">
+                                <span>Programação de Jogos</span>
+                            </label>
+                            <label class="trilha-option">
+                                <input type="radio" name="trilha" value="design" required>
+                                <img src="/img/design.png" alt="Design e Experiência">
+                                <span>Design e Experiência</span>
+                            </label>
+                            <label class="trilha-option">
+                                <input type="radio" name="trilha" value="data" required>
+                                <img src="/img/data.png" alt="Ciência de Dados">
+                                <span>Ciência de Dados</span>
+                            </label>
+                        </div>
+
+                        <div class="terms">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Declaro que li e concordo com os Termos e Condições e com a Política de Privacidade.</label>
+                        </div>
+
+                        <button type="submit">Fazer Inscrição</button>
+                    </form>
                 </div>
-
-                <h2>Trilhas de aprendizagem</h2>
-
-                <div class="trilhas">
-                    <label class="trilha-option">
-                        <input type="radio" name="trilha" value="frontend" required>
-                        <img src="/img/front.png" alt="Programação Front-end">
-                        <span>Programação Front-end</span>
-                    </label>
-                    <label class="trilha-option">
-                        <input type="radio" name="trilha" value="backend" required>
-                        <img src="/img/backend.png" alt="Programação Back-end">
-                        <span>Programação Back-end</span>
-                    </label>
-                    <label class="trilha-option">
-                        <input type="radio" name="trilha" value="games" required>
-                        <img src="/img/games.png" alt="Programação de Jogos">
-                        <span>Programação de Jogos</span>
-                    </label>
-                    <label class="trilha-option">
-                        <input type="radio" name="trilha" value="design" required>
-                        <img src="/img/design.png" alt="Design e Experiência">
-                        <span>Design e Experiência</span>
-                    </label>
-                    <label class="trilha-option">
-                        <input type="radio" name="trilha" value="data" required>
-                        <img src="/img/data.png" alt="Ciência de Dados">
-                        <span>Ciência de Dados</span>
-                    </label>
-                </div>
-
-                <div class="terms">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">Declaro que li e concordo com os Termos e Condições e com a Política de Privacidade.</label>
-                </div>
-
-                <button type="submit">Fazer Inscrição</button>
-            </form>
+            </section>
         </div>
-    </section>
+
+        <!-- Coluna da imagem -->
+        <div class="image-column"></div>
+    </div>
 </body>
 </html>
