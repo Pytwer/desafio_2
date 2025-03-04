@@ -8,25 +8,29 @@ body {
     color: #ffffff;
 }
 
+
 header {
     display: flex;
-    justify-content: space-between; /* Alinha os itens à esquerda e à direita */
-    align-items: center; /* Centraliza verticalmente os itens */
-    padding: 25px 3%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px ;
     background-color: #0080ff;
     color: white;
+    position: fixed; /* Fixa o header no topo */
+    width: 97%;
+    top: 0;
+    z-index: 1000; /* Garante que o header fique acima de tudo */
 }
 
 header .logo {
     display: flex;
-    align-items: center; /* Centraliza a imagem verticalmente dentro do contêiner */
+    align-items: center;
 }
 
 header .logo img {
-    height: 35px; /* Altura da imagem */
-    margin-right: 10px; /* Espaçamento opcional entre a logo e o texto (se houver) */
+    height: 35px;
+    margin-right: 10px;
 }
-
 nav ul {
     list-style: none;
     margin: 0;
@@ -51,7 +55,7 @@ nav ul li a:hover {
 
 .hero {
     position: relative; /* Permite posicionar o pseudo-elemento */
-    height: 500px; /* Altura da seção igual à altura da tela */
+    height: 700px; /* Altura da seção igual à altura da tela */
     display: flex;
     justify-content: center;
     align-items: center;

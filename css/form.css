@@ -14,26 +14,23 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+    align-items: center; /* Centraliza verticalmente os itens */
     padding: 25px 3%;
     background-color: #0080ff;
     color: white;
-    position: fixed; /* Fixa o header no topo */
-    width: 100%;
-    top: 0;
-    z-index: 1000; /* Garante que o header fique acima de tudo */
 }
 
 header .logo {
     display: flex;
-    align-items: center;
+    align-items: center; /* Centraliza a imagem verticalmente dentro do contêiner */
 }
 
 header .logo img {
-    height: 35px;
-    margin-right: 10px;
+    height: 35px; /* Altura da imagem */
+    margin-right: 10px; /* Espaçamento opcional entre a logo e o texto (se houver) */
 }
+
 
 nav ul {
     list-style: none;
@@ -80,8 +77,8 @@ nav ul li a:hover {
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetição da imagem */
     position: sticky; /* Fixa a imagem enquanto o formulário rola */
-    top: 80px; /* Alinha com o topo do container */
-    height: calc(100vh - 80px); /* Altura total menos o header */
+    top: 100px; /* Alinha com o topo do container */
+    height: 606px; /* Altura total menos o header */
 }
 
 /* Estilos do Formulário */
@@ -95,12 +92,12 @@ nav ul li a:hover {
 
 .form h1 {
     text-align: left; /* Alinhado à esquerda */
-    color: #0080ff;
+    color: #000000;
     margin-bottom: 20px;
 }
 
 .form h2 {
-    color: #0080ff;
+    color: #000000;
     margin-top: 20px;
     margin-bottom: 10px;
     text-align: left; /* Alinhado à esquerda */
@@ -225,7 +222,7 @@ input[type="file"] {
 }
 
 .file-upload img {
-    width: 100px;
+    width: 100px;   
     height: 100px;
     object-fit: contain;
     transition: transform 0.3s;
