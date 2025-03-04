@@ -51,7 +51,7 @@ nav ul li a:hover {
 
 .hero {
     position: relative; /* Permite posicionar o pseudo-elemento */
-    height: 700px; /* Altura da seção igual à altura da tela */
+    height: 500px; /* Altura da seção igual à altura da tela */
     display: flex;
     justify-content: center;
     align-items: center;
