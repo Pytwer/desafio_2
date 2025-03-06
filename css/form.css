@@ -178,7 +178,7 @@ input[type="file"] {
     padding: 20px;
     cursor: pointer;
     transition: border-color 0.3s, background-color 0.3s;
-    width: calc(50% - 7.5px);
+    width: 370px;
     box-sizing: border-box;
 }
 
@@ -227,7 +227,7 @@ input[type="file"] {
 .file-upload img {
     width: 100px;   
     height: 100px;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.3s;
 }
 
