@@ -200,11 +200,11 @@ input[type="file"] {
 }
 
 .trilha-option.selected {
-    border-color: #0080ff;
+    border-color: #e43a12;
 }
 
 .trilha-option:hover {
-    border-color: #0080ff;
+    border-color: #e43a12;
 }
 
 /* Estilos para os campos de upload */
