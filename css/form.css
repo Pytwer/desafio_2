@@ -111,127 +111,127 @@ form {
 }
 
 label {
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-weight: bold;  /* Define a fonte como negrito */
+    margin-bottom: 5px; /* Espaçamento */
     text-align: left; /* Alinhado à esquerda */
 }
 
 input, select, button {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 10px;  /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Cor da borda */
+    border-radius: 5px; /* Borda arredondada */
+    width: 100%; /* Ocupa toda a largura */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
 }
 
 button {
-    background-color: #0080ff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #0080ff; /* Cor do botão */
+    color: white; /* Cor do texto */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s; /* Animação ao passar o mouse */
 }
 
 button:hover {
-    background-color: #1abc9c;
+    background-color: #1abc9c; /* Cor ao passar o mouse */
 }
 
 .row {
-    display: flex;
-    gap: 15px;
+    display: flex; /* flexbox */
+    gap: 15px; /* Espaçamento entre os elementos */
 }
 
 .row > div {
-    flex: 1;
+    flex: 1; /* Ocupa o espaço restante */
 }
 
 .terms {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; /* flexbox */
+    align-items: center; /* Centraliza os elementos */
+    gap: 10px; /* Espaçamento entre os elementos */
 }
 
 .terms input {
-    width: auto;
+    width: auto; /* Largura automática */
 }
 
 input[type="file"] {
-    padding: 5px;
+    padding: 5px; /* Espaçamento interno */
 }
 
 /* Estilos para as opções de trilhas */
 .trilhas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    display: flex; /* flexbox */
+    flex-wrap: wrap; /* Quebra a linha ao atingir a largura máxima */
+    gap: 15px; /* Espaçamento entre os elementos */
 }
 
 .trilha-option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 3px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    cursor: pointer;
-    transition: border-color 0.3s, background-color 0.3s;
-    width: 370px;
-    box-sizing: border-box;
+    display: flex; /* flexbox */
+    flex-direction: column; /* Coluna */
+    align-items: center; /* Centraliza os elementos */
+    border: 3px solid #ccc; /* Cor da borda */
+    border-radius: 8px; /* Arredonda a borda */
+    padding: 20px; /* Espaçamento interno */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: border-color 0.3s, background-color 0.3s; /* Animação ao passar o mouse */
+    width: 370px; /* Largura do botão */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
 }
 
 .trilha-option input[type="radio"] {
-    display: none;
+    display: none; /* Esconde o input */
 }
 
 .trilha-option img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+    width: 100px; /* Largura da imagem */
+    height: 100px; /* Altura da imagem */
+    object-fit: cover; /* Ajusta a imagem ao tamanho do botão */
 }
 
 .trilha-option span {
-    margin-top: 10px;
-    font-size: 14px;
-    text-align: center;
-    color: #333;
+    margin-top: 10px; /* Espaçamento do texto */
+    font-size: 14px; /* Tamanho da fonte */
+    text-align: center; /* Alinhado ao centro */
+    color: #333; /* Cor do texto */
 }
 
 .trilha-option.selected {
-    border-color: #e43a12;
+    border-color: #e43a12; /* Cor da borda */
 }
 
 .trilha-option:hover {
-    border-color: #e43a12;
+    border-color: #e43a12; /* Cor da borda */
 }
 
 /* Estilos para os campos de upload */
 .file-upload {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    width: 700px;
-    height: auto;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    transition: border-color 0.3s;
-    overflow: hidden;
-    margin: 0 auto;
-    gap: 10px;
+    display: flex; /* flexbox */
+    flex-direction: column; /* Coluna */
+    align-items: center; /* Centraliza os elementos */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    width: 700px; /* Largura */
+    height: auto; /* Altura */
+    border: 2px dashed #ccc;   /* Cor da borda */
+    border-radius: 8px; /* Arredonda a borda */
+    padding: 20px; /* Espaçamento interno */
+    transition: border-color 0.3s; /* Animação ao passar o mouse */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o botão*/
+    margin: 0 auto; /* Centraliza o botão */
+    gap: 10px; /* Espaçamento entre os elementos */
 }
 
 .file-upload img {
-    width: 100px;   
-    height: 100px;
-    object-fit: cover;
-    transition: transform 0.3s;
+    width: 100px;   /* Largura da imagem */
+    height: 100px; /* Altura da imagem */
+    object-fit: cover; /* Ajusta a imagem ao tamanho do container */
+    transition: transform 0.3s; /* Animação ao passar o mouse */
 }
 
 .file-upload:hover img {
-    transform: scale(0.9);
+    transform: scale(0.9); /* Diminui a imagem ao passar o mouse */
 }
 
 .file-upload:hover {
-    border-color: #0080ff;
+    border-color: #0080ff; /* Cor do botão */
 }
