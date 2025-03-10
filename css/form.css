@@ -1,6 +1,7 @@
 /* Estilos Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -59,17 +60,17 @@ nav ul li a:hover {
 
 /* Layout de duas colunas */
 .container {
-    display: flex;
-    width: 100%;
+    display: flex; /* flexbox */
+    width: 100%; /* Ocupa toda a largura */
     margin-top: 80px; /* Espaço para o header */
-    height: calc(100vh - 80px); /* Altura total menos o header */
+    height: 700px /* Altura total do formulário */
 }
 
 /* Coluna do formulário */
 .form-column {
     flex: 1; /* Ocupa o espaço restante */
-    padding: 20px;
-    overflow-y: auto; /* Adiciona scrollbar vertical */
+    padding: 20px; /* Espaçamento da borda do site */
+    overflow-y: auto; /* Adiciona scrollbar */
 }
 
 /* Coluna da imagem */
@@ -81,35 +82,32 @@ nav ul li a:hover {
     background-repeat: no-repeat; /* Evita repetição da imagem */
     position: sticky; /* Fixa a imagem enquanto o formulário rola */
     top: 80px; /* Alinha com o topo do container */
-    height: calc(100vh - 80px); /* Altura total menos o header */
+    height: 631px; /* Altura total menos o header */
 }
 
 /* Estilos do Formulário */
 .form {
     background-color: transparent; /* Removido o fundo branco */
-    border-radius: 0; /* Removido o border-radius */
-    box-shadow: none; /* Removido o box-shadow */
-    max-width: 800px;
-    margin: 0 auto; /* Centraliza o formulário na coluna */
+    max-width: 800px; /* Largura máxima do formulário */
 }
 
 .form h1 {
     text-align: left; /* Alinhado à esquerda */
-    color: #000000;
-    margin-bottom: 20px;
+    color: #000000; /* Cor do titulo */
+    margin-bottom: 20px; /* Espaçamento */
 }
 
 .form h2 {
-    color: #000000;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    color: #000000; /* Cor do subtitulo */
+    margin-top: 20px; /* Espaçamento */
+    margin-bottom: 10px; /* Espaçamento */
     text-align: left; /* Alinhado à esquerda */
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: flex; /* flexbox */
+    flex-direction: column; /* Coluna */
+    gap: 15px; /* Espaçamento entre os elementos */ 
 }
 
 label {
@@ -130,7 +128,6 @@ input, select, button {
 button {
     background-color: #0080ff;
     color: white;
-    border: none;
     cursor: pointer;
     transition: background-color 0.3s;
 }
