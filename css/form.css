@@ -69,8 +69,9 @@ nav ul li a:hover {
 /* Coluna do formulário */
 .form-column {
     flex: 1; /* Ocupa o espaço restante */
-    padding: 20px; /* Espaçamento da borda do site */
+    padding: 10px; /* Espaçamento da borda do site */
     overflow-y: auto; /* Adiciona scrollbar */
+
 }
 
 /* Coluna da imagem */
@@ -82,12 +83,11 @@ nav ul li a:hover {
     background-repeat: no-repeat; /* Evita repetição da imagem */
     position: sticky; /* Fixa a imagem enquanto o formulário rola */
     top: 80px; /* Alinha com o topo do container */
-    height: 631px; /* Altura total menos o header */
+    height: 560px; /* Altura total menos o header */
 }
 
 /* Estilos do Formulário */
 .form {
-    background-color: transparent; /* Removido o fundo branco */
     max-width: 800px; /* Largura máxima do formulário */
 }
 
@@ -107,7 +107,7 @@ nav ul li a:hover {
 form {
     display: flex; /* flexbox */
     flex-direction: column; /* Coluna */
-    gap: 15px; /* Espaçamento entre os elementos */ 
+    gap: 20px; /* Espaçamento entre os elementos */ 
 }
 
 label {
@@ -125,18 +125,18 @@ input, select, button {
     box-sizing: border-box; /* Inclui padding e borda na largura */
 }
 
-button {
+.button{ /* Estilos do botão */
     background-color: #0080ff; /* Cor do botão */
     color: white; /* Cor do texto */
     cursor: pointer; /* Muda o cursor ao passar o mouse */
     transition: background-color 0.3s; /* Animação ao passar o mouse */
 }
 
-button:hover {
+button:hover { /* Cor ao passar o mouse */
     background-color: #1abc9c; /* Cor ao passar o mouse */
 }
 
-.row {
+.row { /* Layout de duas colunas */
     display: flex; /* flexbox */
     gap: 15px; /* Espaçamento entre os elementos */
 }
@@ -175,7 +175,7 @@ input[type="file"] {
     padding: 20px; /* Espaçamento interno */
     cursor: pointer; /* Muda o cursor ao passar o mouse */
     transition: border-color 0.3s, background-color 0.3s; /* Animação ao passar o mouse */
-    width: 370px; /* Largura do botão */
+    width: 340px; /* Largura do botão */
     box-sizing: border-box; /* Inclui padding e borda na largura */
 }
 

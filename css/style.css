@@ -1,6 +1,7 @@
 /* Estilos Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +15,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 25px ;
-    background-color: #0080ff;
+    background-color: #2135a6;
     color: white;
     position: fixed; /* Fixa o header no topo */
     width: 97%;
@@ -50,7 +51,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #1abc9c;
+    color: #2135a6;
 }
 
 .hero {
@@ -71,8 +72,8 @@ nav ul li a:hover {
     left: 0;
     width: 110%;
     height: 100%;
-    background-image: url(''); /* Caminho da imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a seção */
+    background-color: #2135a6;
+    background-size: cover; /*  Faz a imagem cobrir toda a seção */
     background-position: center; /* Centraliza a imagem */
     filter: blur(3px); /* Aplica o desfoque */
     z-index: -1; /* Coloca a imagem atrás do conteúdo */
@@ -106,7 +107,7 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background-color: #0044ff;
+    background-color: #2135a6;
 }
 
 .subscription {
@@ -154,5 +155,5 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-    color: #1abc9c;
+    color: #2135a6;
 }
