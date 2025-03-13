@@ -1,6 +1,3 @@
-
-
-
 document.querySelectorAll('.trilha-option input[type="radio"]').forEach((radio) => {
     radio.addEventListener('change', function () {
         // Remove a classe de seleção de todas as opções
@@ -12,6 +9,7 @@ document.querySelectorAll('.trilha-option input[type="radio"]').forEach((radio) 
         if (this.checked) {
             this.closest('.trilha-option').classList.add('selected');
         }
+        
     });
 });
 function redirecionar() {
