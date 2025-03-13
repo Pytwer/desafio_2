@@ -69,7 +69,7 @@ nav ul li a:hover {
 /* Coluna do formulário */
 .form-column {
     flex: 1; /* Ocupa o espaço restante */
-    padding: 10px; /* Espaçamento da borda do site */
+    padding: 30px; /* Espaçamento da borda do site */
     overflow-y: auto; /* Adiciona scrollbar */
 
 }
@@ -83,7 +83,7 @@ nav ul li a:hover {
     background-repeat: no-repeat; /* Evita repetição da imagem */
     position: sticky; /* Fixa a imagem enquanto o formulário rola */
     top: 80px; /* Alinha com o topo do container */
-    height: 560px; /* Altura total menos o header */
+    height: 650px; /* Altura total menos o header */
 }
 
 /* Estilos do Formulário */
@@ -234,4 +234,37 @@ input[type="file"] {
 
 .file-upload:hover {
     border-color: #0080ff; /* Cor do botão */
+}
+.modal {
+    display: none; /* Esconder o modal por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
 }

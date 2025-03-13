@@ -26,7 +26,7 @@
             <section id="home" class="form">
                 <div class="form-content">
                     <h1>Formulário de Inscrição</h1>
-                    <form action="/pgs/inscrição.html" method="post" onsubmit="redirecionar()">
+                    <form>
                         <h2>Informações do participante</h2>
 
                         <label for="name">Nome completo:</label>
@@ -154,12 +154,17 @@
                             <input type="checkbox" id="terms" name="terms" required>
                             <label for="terms">Concordo com os termos de envio de dados conforme a LGPD</label>
                         </div>
-                        <button type="submit">Enviar</button>
+                        <a href="index.html"><button type="submit">Enviar</button></a>
                     </form>
                 </div>
             </section>
         </div>
-
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <p>Formulário enviado com sucesso!</p>
+                <button id="closeModal">Fechar</button>
+            </div>
+        </div>
         <!-- Coluna da imagem -->
         <div class="image-column"></div>
         
