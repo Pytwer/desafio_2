@@ -72,7 +72,7 @@ nav ul li a:hover {
     left: 0;
     width: 110%;
     height: 100%;
-    background-color: #2135a6;
+    background-image: url('/img/image.png');
     background-size: cover; /*  Faz a imagem cobrir toda a seção */
     background-position: center; /* Centraliza a imagem */
     filter: blur(3px); /* Aplica o desfoque */
