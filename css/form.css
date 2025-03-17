@@ -118,8 +118,8 @@ label {
 
 input, select, button {
     padding: 10px;  /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    border: 1px solid #c    cc; /* Cor da borda */
+    font-size: 20px; /* Tamanho da fonte */
+    border: 1px solid #0c0707; /* Cor da borda */
     border-radius: 5px; /* Borda arredondada */
     width: 100%; /* Ocupa toda a largura */
     box-sizing: border-box; /* Inclui padding e borda na largura */
