@@ -255,16 +255,23 @@ input[type="file"] {
     text-align: center;
 }
 
-.modal-content button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 .modal-content button:hover {
     background-color: #0056b3;
+}
+.botao-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.inscricao {
+    background-color: #f3541c;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 35px;
+    text-align: center;
+    font-size: 14px;
 }
