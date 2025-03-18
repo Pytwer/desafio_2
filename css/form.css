@@ -20,7 +20,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 25px ;
-    background-color: #0080ff;
+    background-color: #2c03e2;
     color: white;
     position: fixed; /* Fixa o header no topo */
     width: 97%;
@@ -65,7 +65,7 @@ nav ul li a:hover {
     display: flex; /* flexbox */
     width: 100%; /* Ocupa toda a largura */
     margin-top: 80px; /* Espaço para o header */
-    height: 700px /* Altura total do formulário */
+    height: 600px /* Altura total do formulário */
 }
 
 /* Coluna do formulário */
@@ -293,4 +293,87 @@ input[type="file"] {
 
 .inscricao:hover {
     background-color: #d84315;
+}
+.Voltar {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: flex-start; /* Alinha os itens no topo */
+    height: 140px; 
+    width: 200px;  
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, background-color 0.3s;
+    text-align: center;
+    margin-top: 10px;
+    position: relative; /* Para posicionar o checkbox corretamente */
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none; /* Esconde o checkbox padrão */
+}
+
+.custom-checkbox .checkmark {
+    width: 20px; 
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Espaço entre o checkbox e a imagem */
+    position: relative;
+}
+
+.custom-checkbox .content {
+    display: flex;
+    flex-direction: column; /* Organiza a imagem e o texto em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.custom-checkbox img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.custom-checkbox .texto {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    width: 100%; /* Garante que o texto ocupe toda a largura */
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #f3541c; /* Cor quando marcado */
+    border-color: #f3541c;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✔';
+    position: absolute;
+    top: 5%;
+    left: 25%; 
+    font-size: 12px;
+    color: white;
+    transition: left 0.3s ease; 
+}
+
+.custom-checkbox:hover {
+    border-color: #f3541c; /* Cor da borda ao passar o mouse */
 }
