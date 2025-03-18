@@ -53,3 +53,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // Evento de clique no botão "Fechar" do modal
     closeModalButton.addEventListener('click', closeModal);
 });
+var dateControl = document.querySelector('input[type="date"]');
+dateControl.value = "2025-03-18";
