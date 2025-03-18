@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px ;
+    background-color: #2135a6;
+    color: white;
+    position: fixed; /* Fixa o header no topo */
+    width: 97%;
+    top: 0;
+    z-index: 1000; /* Garante que o header fique acima de tudo */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 35px;
+    margin-right: 10px;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2135a6;
+}
+
+.hero {
+    position: relative; /* Permite posicionar o pseudo-elemento */
+    height: 700px; /* Altura da seção igual à altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255); /* Texto branco para contraste */
+    overflow: hidden; /* Evita que o desfoque ultrapasse os limites da seção */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/image.png');
+    background-size: cover; /*  Faz a imagem cobrir toda a seção */
+    background-position: center; /* Centraliza a imagem */
+    filter: blur(3px); /* Aplica o desfoque */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+    padding: 300px;
+    border-radius: 80px;
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem desfocada */
+    max-width: 800px; /* Limita a largura do conteúdo */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2135a6;
+}
+
+.subscription {
+    padding: 50px 10%;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.subscription form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.subscription label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.subscription input, .subscription button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .footer-content {
+    margin-bottom: 20px;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+    color: #2135a6;
+}
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+    border-color: #007BFF;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.register-link, .login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-link a, .login-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .login-container input, .login-container button {
+        font-size: 14px;
+    }
+}
