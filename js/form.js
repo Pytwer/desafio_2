@@ -12,21 +12,44 @@ document.querySelectorAll('.trilha-option input[type="radio"]').forEach((radio) 
         
     });
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('inscricaoForm');
     const modal = document.getElementById('confirmationModal');
     const closeModalButton = document.getElementById('closeModal');
 
-    form.addEventListener('submit', function(event) {
+    // Função para exibir o modal
+    function showModal() {
+        modal.style.display = 'flex';
+    }
+
+    // Função para fechar o modal e redirecionar
+    function closeModal() {
+        modal.style.display = 'none';
+        window.location.href = '../index.html'; // Redireciona para a home
+    }
+
+    // Evento de envio do formulário
+    form.addEventListener('submit', function (event) {
         event.preventDefault(); // Impede o envio padrão do formulário
 
-        // Exibe o modal
-        modal.style.display = 'flex';
-
-        // Fecha o modal e redireciona para a home quando o botão "Fechar" é clicado
-        closeModalButton.addEventListener('click', function() {
-            modal.style.display = 'none';
-            window.location.href = '/pgs/index.html'; // Redireciona para a home
+        // Validação dos campos do formulário
+        const allFieldsValid = Array.from(form.elements).every(element => {
+            if (element.required && !element.value.trim()) {
+                return false; // Campo obrigatório não preenchido
+            }
+            return true;
         });
+
+        if (allFieldsValid) {
+            showModal(); // Exibe o modal se todos os campos estiverem preenchidos
+        } else {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+        }
     });
+
+    // Evento de clique no botão "Fechar" do modal
+    closeModalButton.addEventListener('click', closeModal);
 });

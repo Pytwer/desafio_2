@@ -11,6 +11,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh; /* Faz o body ocupar toda a altura da tela */
+    overflow-y: hidden; /* Adiciona scrollbar */
+
 }
 
 header {
@@ -83,7 +85,7 @@ nav ul li a:hover {
     background-repeat: no-repeat; /* Evita repetição da imagem */
     position: sticky; /* Fixa a imagem enquanto o formulário rola */
     top: 80px; /* Alinha com o topo do container */
-    height: 650px; /* Altura total menos o header */
+    height: 609px; /* Altura total menos o header */
 }
 
 /* Estilos do Formulário */
@@ -118,8 +120,8 @@ label {
 
 input, select, button {
     padding: 10px;  /* Espaçamento interno */
-    font-size: 20px; /* Tamanho da fonte */
-    border: 1px solid #0c0707; /* Cor da borda */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Cor da borda */
     border-radius: 5px; /* Borda arredondada */
     width: 100%; /* Ocupa toda a largura */
     box-sizing: border-box; /* Inclui padding e borda na largura */
@@ -237,12 +239,12 @@ input[type="file"] {
 }
 .modal {
     display: none; /* Esconder o modal por padrão */
-    position: relative;
-    z-index: 100;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
@@ -257,7 +259,7 @@ input[type="file"] {
 
 .modal-content button {
     margin-top: 10px;
-    padding: 10px 10px;
+    padding: 10px 20px;
     background-color: #007BFF;
     color: white;
     border: none;
@@ -267,4 +269,28 @@ input[type="file"] {
 
 .modal-content button:hover {
     background-color: #0056b3;
+}
+
+/* Estilos para o botão de inscrição */
+.botao-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.inscricao {
+    background-color: #f3541c;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.inscricao:hover {
+    background-color: #d84315;
 }

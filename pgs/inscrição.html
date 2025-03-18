@@ -8,6 +8,14 @@
     <script src="/js/form.js" defer></script>
 </head>
 <body>
+  
+    <!-- Modal de confirmação -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <p>Formulário enviado com sucesso!</p>
+            <button id="closeModal">Fechar</button>
+        </div>
+    </div>
 
     <header>
         <div class="logo">
@@ -20,13 +28,14 @@
             </ul>
         </nav>
     </header>
+
     <div class="container">
         <!-- Coluna do formulário -->
         <div class="form-column">
             <section id="home" class="form">
                 <div class="form-content">
                     <h1>Formulário de Inscrição</h1>
-                    <form>
+                    <form id="inscricaoForm">
                         <h2>Informações do participante</h2>
 
                         <label for="name">Nome completo:</label>
@@ -34,7 +43,7 @@
 
                         <div class="row">
                             <div>
-                                <label for="birthdate">Data de nascimento:</label>
+                                <label for="birthdate" min=>Data de nascimento:</label>
                                 <input type="date" id="birthdate" name="birthdate" required>
                             </div>
                             <div>
@@ -154,94 +163,17 @@
                             <input type="checkbox" id="terms" name="terms" required>
                             <label for="terms">Concordo com os termos de envio de dados conforme a LGPD</label>
                         </div>
-                        <a href="index.html"><button type="submit">Enviar</button></a>
+                        <div class="botao-container">
+                            <button type="submit" class="inscricao">Fazer inscrição</button>
+                        </div>
                     </form>
-                <div class="row">
-                    <div>
-                        <label for="birthdate">Data de nascimento:</label>
-                        <input type="date" id="birthdate" name="birthdate" required>
-                    </div>
-                    <div>
-                        <label for="cpf">CPF:</label>
-                        <input type="text" id="cpf" name="cpf" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <label for="gender">Sexo:</label>
-                        <select id="gender" name="gender" required>
-                            <option value="feminino">Feminino</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <label for="phone">Telefone:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div>
-                        <label for="identity">Documento de identidade:</label>
-                        <input type="file" id="identity" name="identity" required>
-                    </div>
-                </div>
-
-                <h2>Endereço residencial</h2>
-
-                <div class="row">
-                    <div>
-                        <label for="cep">CEP:</label>
-                        <input type="text" id="cep" name="cep" required>
-                    </div>
-                    <div>
-                        <label for="street">Rua:</label>
-                        <input type="text" id="street" name="street" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <label for="number">Número:</label>
-                        <input type="text" id="number" name="number" required>
-                    </div>
-                    <div>
-                        <label for="city">Cidade:</label>
-                        <input type="text" id="city" name="city" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div>
-                        <label for="state">Estado:</label>
-                        <input type="text" id="state" name="state" required>
-                    </div>
-                </div>
-
-                <h2>Comprovante de residência</h2>
-
-                <div class="row">
-                    <div>
-                        <label for="residence">Comprovante de residência:</label>
-                        <input type="file" id="residence" name="residence" required>
-                    </div>
                 </div>
             </section>
         </div>
-        <div id="confirmationModal" class="modal">
-            <div class="modal-content">
-                <p>Formulário enviado com sucesso!</p>
-                <button id="closeModal">Fechar</button>
-            </div>
-        </div>
+
         <!-- Coluna da imagem -->
         <div class="image-column"></div>
-        </div>
+    </div>
+
 </body>
 </html>
