@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login e Cadastro | INOVA Maranhão</title>
     <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/login.js" defer></script>
 </head>
 <body>
     <div class="login-container" id="formContainer">
         <!-- Formulário de Login -->
         <div id="loginForm">
-    
             <h2>Login</h2>
             <form>
                 <input type="cpf" placeholder="CPF" required>
@@ -18,7 +18,7 @@
                 <button type="submit">Entrar</button>
             </form>
             <div class="register-link">
-                Não está cadastrado? <a id="showRegisterForm">Cadastrar</a>
+                Não está cadastrado? <a id="showRegisterForm" href="#">Cadastrar</a>
             </div>
         </div>
 
@@ -26,13 +26,12 @@
         <div id="registerForm" style="display: none;">
             <h2>Cadastro</h2>
             <form>
-                <input type="text" placeholder="Nome Completo" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Senha" required>
-                <button type="submit">Cadastrar</button>
+                <input type="cpf" placeholder="CPF" required>
+                <input type="password" placeholder="Cadastrar Senha" required>
+                <button type="submit">Salvar</button>
             </form>
             <div class="login-link">
-                Já tem uma conta? <a id="showLoginForm">Login</a>
+                Já tem uma conta? <a id="showLoginForm" href="#">Login</a>
             </div>
         </div>
     </div>
@@ -46,5 +45,7 @@
             </div>
         </div>
     </footer>
+
+    
 </body>
 </html>

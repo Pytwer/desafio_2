@@ -1,18 +1,18 @@
+//Seleciona os elementos
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
-const showRegisterForm = document.getElementById('showRegisterForm');
-const showLoginForm = document.getElementById('showLoginForm');
+const showRegisterFormLink = document.getElementById('showRegisterForm');
+const showLoginFormLink = document.getElementById('showLoginForm');
 
-// Mostrar formulário de cadastro
-showRegisterForm.addEventListener('click', (e) => {
+// Adiciona eventos de clique aos links
+showRegisterFormLink.addEventListener('click', function (e) {
     e.preventDefault(); // Evita o comportamento padrão do link
-    loginForm.style.display = 'none';
-    registerForm.style.display = 'block';
+    loginForm.style.display = 'none'; // Oculta o formulário de login
+    registerForm.style.display = 'block'; // Mostra o formulário de cadastro
 });
 
-// Mostrar formulário de login
-showLoginForm.addEventListener('click', (e) => {
+showLoginFormLink.addEventListener('click', function (e) {
     e.preventDefault(); // Evita o comportamento padrão do link
-    registerForm.style.display = 'none';
-    loginForm.style.display = 'block';
+    registerForm.style.display = 'none'; // Oculta o formulário de cadastro
+    loginForm.style.display = 'block'; // Mostra o formulário de login
 });

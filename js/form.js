@@ -1,16 +1,19 @@
-//botões do trilha
-document.querySelectorAll('.trilha-option input[type="radio"]').forEach((radio) => {
-    radio.addEventListener('change', function () {
-        // Remove a classe de seleção de todas as opções
-        document.querySelectorAll('.trilha-option').forEach((option) => {
+document.querySelectorAll('.custom-checkbox').forEach((checkboxContainer) => {
+    const checkbox = checkboxContainer.querySelector('input[type="checkbox"]');
+
+    checkboxContainer.addEventListener('click', (event) => {
+        // Evita que o evento seja disparado múltiplas vezes
+        event.stopPropagation();
+
+        // Remove a classe 'selected' de todos os botões e desmarca os checkboxes
+        document.querySelectorAll('.custom-checkbox').forEach((option) => {
             option.classList.remove('selected');
+            option.querySelector('input[type="checkbox"]').checked = false;
         });
 
-        // Adiciona a classe de seleção à opção clicada
-        if (this.checked) {
-            this.closest('.trilha-option').classList.add('selected');
-        }
-        
+        // Adiciona a classe 'selected' e marca o checkbox apenas no botão clicado
+        checkbox.checked = true;
+        checkboxContainer.classList.add('selected');
     });
 });
 // validação de cpf 

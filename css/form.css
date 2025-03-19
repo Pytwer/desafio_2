@@ -162,11 +162,7 @@ input[type="file"] {
 }
 
 /* Estilos para as opções de trilhas */
-.trilhas {
-    display: flex; /* flexbox */
-    flex-wrap: wrap; /* Quebra a linha ao atingir a largura máxima */
-    gap: 15px; /* Espaçamento entre os elementos */
-}
+
 
 .trilha-option {
     display: flex; /* flexbox */
@@ -304,4 +300,121 @@ input[type="file"] {
 .voltar {
     display: flex;
     align-items: center;
+}
+.trilhas {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 25px; 
+    padding: 0;
+    border-radius: 8px;
+}
+.custom-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 140px;
+    width: 220px;
+    cursor: pointer;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, background-color 0.3s;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #f3541c;
+    border-color: #f3541c;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✔';
+    font-size: 12px;
+    color: white;
+}
+
+.custom-checkbox.selected {
+    border-color: #f3541c; /* Borda destacada */
+    background-color: #f0f0f0; /* Exemplo de estilo para o estado selecionado */
+}
+
+.custom-checkbox .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.custom-checkbox img {
+    max-width: 30%;
+    height: auto;
+}
+
+.custom-checkbox .texto {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+}
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #f3541c;
+    border-color: #f3541c;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✔';
+    position: absolute;
+    top: 0;
+    left: 25%; 
+    font-size: 12px;
+    color: white;
+    transition: left 0.3s ease; 
+}
+
+.custom-checkbox:hover {
+    border-color: #f3541c;
+}
+
+.custom-checkbox span {
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+}
+.custom-checkbox input[type="radio"] {
+    display: none; /* Esconde o input */
+}
+.custom-checkbox .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
