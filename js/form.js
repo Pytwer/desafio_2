@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('confirmationModal');
     const closeModalButton = document.getElementById('closeModal');
     // Função para exibir o modal
-    function showModal() {
+    function    showModal() {
         modal.style.display = 'flex';
     }
     // Função para fechar o modal e redirecionar
