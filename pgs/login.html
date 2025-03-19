@@ -12,28 +12,32 @@
         <!-- Formulário de Login -->
         <div id="loginForm">
             <h2>Login</h2>
-            <form>
-                <input type="cpf" placeholder="CPF" required>
-                <input type="password" placeholder="Senha" required>
-                <button type="submit">Entrar</button>
+            <form id="loginFormElement">
+                <input type="cpf" id="loginCpf" placeholder="CPF" required>
+                <input type="password" id="loginPassword" placeholder="Senha" required>
+                <button type="submit" id="loginButton">Entrar</button>
             </form>
             <div class="register-link">
                 Não está cadastrado? <a id="showRegisterForm" href="#">Cadastrar</a>
             </div>
+            <p id="loginMessage" style="color: red; display: none;"></p>
         </div>
-
-        <!-- Formulário de Cadastro (inicialmente oculto) -->
+    
+        <!-- Formulário de Cadastro -->
+        <!-- Formulário de Cadastro -->
         <div id="registerForm" style="display: none;">
             <h2>Cadastro</h2>
-            <form>
-                <input type="cpf" placeholder="CPF" required>
-                <input type="password" placeholder="Cadastrar Senha" required>
-                <button type="submit">Salvar</button>
+            <form id="registerFormElement">
+                <input type="text" id="registerCpf" placeholder="CPF" required maxlength="14" oninput="formatCPF(this)" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF válido (formato: 000.000.000-00)">
+                <input type="password" id="registerPassword" placeholder="Cadastrar Senha" required minlength="6" maxlength="10">
+                <button type="submit" id="registerButton">Salvar</button>
             </form>
             <div class="login-link">
                 Já tem uma conta? <a id="showLoginForm" href="#">Login</a>
             </div>
+            <p id="registerMessage" style="color: green; display: none;"></p>
         </div>
+    </div>
     </div>
     <footer>
         <div class="footer-content">

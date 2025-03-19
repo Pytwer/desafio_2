@@ -1,18 +1,82 @@
-//Seleciona os elementos
-const loginForm = document.getElementById('loginForm');
-const registerForm = document.getElementById('registerForm');
-const showRegisterFormLink = document.getElementById('showRegisterForm');
-const showLoginFormLink = document.getElementById('showLoginForm');
+document.addEventListener("DOMContentLoaded", function() {
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const showRegisterForm = document.getElementById("showRegisterForm");
+    const showLoginForm = document.getElementById("showLoginForm");
+    const loginButton = document.getElementById("loginButton");
+    const registerButton = document.getElementById("registerButton");
+    const loginMessage = document.getElementById("loginMessage");
+    const registerMessage = document.getElementById("registerMessage");
 
-// Adiciona eventos de clique aos links
-showRegisterFormLink.addEventListener('click', function (e) {
-    e.preventDefault(); // Evita o comportamento padrão do link
-    loginForm.style.display = 'none'; // Oculta o formulário de login
-    registerForm.style.display = 'block'; // Mostra o formulário de cadastro
-});
+    let userData = {}; // Armazenar dados do usuário
 
-showLoginFormLink.addEventListener('click', function (e) {
-    e.preventDefault(); // Evita o comportamento padrão do link
-    registerForm.style.display = 'none'; // Oculta o formulário de cadastro
-    loginForm.style.display = 'block'; // Mostra o formulário de login
+    // Mostrar o formulário de cadastro
+    showRegisterForm.addEventListener("click", function(event) {
+        event.preventDefault();
+        loginForm.style.display = "none";
+        registerForm.style.display = "block";
+    });
+
+    // Mostrar o formulário de login
+    showLoginForm.addEventListener("click", function(event) {
+        event.preventDefault();
+        registerForm.style.display = "none";
+        loginForm.style.display = "block";
+    });
+
+    // Lidar com o envio do formulário de login
+    loginButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        const cpf = document.getElementById("loginCpf").value.replace(/\D/g, ''); // Remove formatação
+        const password = document.getElementById("loginPassword").value;
+
+        // Verificar se os dados estão corretos
+        if (userData.cpf === cpf && userData.password === password) {
+            loginMessage.style.display = "none";
+            // Redirecionar para o formulário ou página desejada
+            window.location.href = "/pgs/inscrição.html"; // Descomente e altere para a URL desejada
+        } else {
+            loginMessage.textContent = "CPF ou senha incorretos.";
+            loginMessage.style.display = "block";
+        }
+    });
+
+    // Lidar com o envio do formulário de cadastro
+    registerButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        const cpf = document.getElementById("registerCpf").value.replace(/\D/g, ''); // Remove formatação
+        const password = document.getElementById("registerPassword").value;
+
+        // Verificação se os campos estão vazios
+        if (!cpf || !password) {
+            registerMessage.textContent = "Por favor, preencha todos os campos.";
+            registerMessage.style.display = "block";
+            return;
+        }
+
+        // Validação do CPF
+        if (cpf.length !== 11) {
+            registerMessage.style.display = "block";
+            return;
+        }
+
+        // Validação da Senha
+        if (password.length < 6 || password.length > 10) {
+            registerMessage.textContent = "A senha deve ter entre 6 e 10 dígitos.";
+            registerMessage.style.display = "block";
+            return;
+        }
+
+        // Salvar os dados do usuário
+        userData = { cpf, password };
+        registerMessage.textContent = "Cadastro realizado com sucesso! Você pode fazer login agora.";
+        registerMessage.style.display = "block";
+
+        // Voltar para o formulário de login após um pequeno atraso
+        setTimeout(() => {
+            registerForm.style.display = "none";
+            loginForm.style.display = "block";
+            registerMessage.style.display = "none"; // Ocultar mensagem de registro
+        }, 2000);
+    });
 });
