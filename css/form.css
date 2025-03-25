@@ -1,31 +1,420 @@
-@type {import('tailwindcss').Config}
-module.exports = {
-    content: [
-      "./src/**/*.{html,js}",
-      "./*.html" // Adicione esta linha se você estiver usando arquivos HTML na raiz
-    ],
-    theme: {
-      extend: {
-        fontFamily: {
-          poppins: ['"Poppins"', 'sans-serif'], // Adicione aspas para nomes de fontes com espaços
-        },
-        colors: {
-          primary: {
-            DEFAULT: '#4f09f3',
-            50: '#f5f0ff',
-            100: '#e9e0ff',
-            // ... você pode adicionar variações de tonalidade
-          },
-          secondary: '#1abc9c',
-          accent: '#f3541c',
-          button: '#0080ff',
-        },
-        height: {
-          'screen-minus-header': 'calc(100vh - 80px)', // Exemplo de utilidade personalizada
-        }
-      },
-    },
-    plugins: [
-      require('@tailwindcss/forms'), // Plugin opcional para estilizar formulários
-    ],
-  }
+/* Estilos Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Faz o body ocupar toda a altura da tela */
+    overflow-y: hidden; /* Adiciona scrollbar */
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px ;
+    background-color: #4f09f3;
+    color: white;
+    position: fixed; /* Fixa o header no topo */
+    width: 97%;
+    top: 0;
+    z-index: 1000; /* Garante que o header fique acima de tudo */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+/* Layout de duas colunas */
+.container {
+    display: flex; /* flexbox */
+    width: 100%; /* Ocupa toda a largura */
+    margin-top: 80px; /* Espaço para o header */
+    height: 700px /* Altura total do formulário */
+}
+
+/* Coluna do formulário */
+.form-column {
+    flex: 1; /* Ocupa o espaço restante */
+    padding: 30px; /* Espaçamento da borda do site */
+    overflow-y: auto; /* Adiciona scrollbar */
+
+}
+
+/* Coluna da imagem */
+.image-column {
+    width: 40%; /* Largura da coluna da imagem */
+    background-image: url('/img/bannerform.png'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    position: sticky; /* Fixa a imagem enquanto o formulário rola */
+    top: 80px; /* Alinha com o topo do container */
+    height: 700px; /* Altura total menos o header */
+}
+
+/* Estilos do Formulário */
+.form {
+    max-width: 800px; /* Largura máxima do formulário */
+}
+
+.form h1 {
+    text-align: left; /* Alinhado à esquerda */
+    color: #000000; /* Cor do titulo */
+    margin-bottom: 20px; /* Espaçamento */
+}
+
+.form h2 {
+    color: #000000; /* Cor do subtitulo */
+    margin-top: 20px; /* Espaçamento */
+    margin-bottom: 10px; /* Espaçamento */
+    text-align: left; /* Alinhado à esquerda */
+}
+
+form {
+    display: flex; /* flexbox */
+    flex-direction: column; /* Coluna */
+    gap: 20px; /* Espaçamento entre os elementos */ 
+}
+
+label {
+    font-weight: bold;  /* Define a fonte como negrito */
+    margin-bottom: 5px; /* Espaçamento */
+    text-align: left; /* Alinhado à esquerda */
+}
+
+input, select, button {
+    padding: 10px;  /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Cor da borda */
+    border-radius: 5px; /* Borda arredondada */
+    width: 100%; /* Ocupa toda a largura */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+}
+
+.button{ /* Estilos do botão */
+    background-color: #0080ff; /* Cor do botão */
+    color: white; /* Cor do texto */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s; /* Animação ao passar o mouse */
+}
+
+button:hover { /* Cor ao passar o mouse */
+    background-color: #1abc9c; /* Cor ao passar o mouse */
+}
+
+.row { /* Layout de duas colunas */
+    display: flex; /* flexbox */
+    gap: 15px; /* Espaçamento entre os elementos */
+}
+
+.row > div {
+    flex: 1; /* Ocupa o espaço restante */
+}
+
+.terms {
+    display: flex; /* flexbox */
+    align-items: center; /* Centraliza os elementos */
+    gap: 10px; /* Espaçamento entre os elementos */
+}
+
+.terms input {
+    width: auto; /* Largura automática */
+}
+
+input[type="file"] {
+    padding: 5px; /* Espaçamento interno */
+}
+
+/* Estilos para as opções de trilhas */
+
+
+.trilha-option {
+    display: flex; /* flexbox */
+    flex-direction: column; /* Coluna */
+    align-items: center; /* Centraliza os elementos */
+    border: 3px solid #ccc; /* Cor da borda */
+    border-radius: 8px; /* Arredonda a borda */
+    padding: 20px; /* Espaçamento interno */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: border-color 0.3s, background-color 0.3s; /* Animação ao passar o mouse */
+    width: 340px; /* Largura do botão */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+}
+
+.trilha-option input[type="radio"] {
+    display: none; /* Esconde o input */
+}
+
+.trilha-option img {
+    width: 100px; /* Largura da imagem */
+    height: 100px; /* Altura da imagem */
+    object-fit: cover; /* Ajusta a imagem ao tamanho do botão */
+}
+
+.trilha-option span {
+    margin-top: 10px; /* Espaçamento do texto */
+    font-size: 14px; /* Tamanho da fonte */
+    text-align: center; /* Alinhado ao centro */
+    color: #333; /* Cor do texto */
+}
+
+.trilha-option.selected {
+    border-color: #e43a12; /* Cor da borda */
+}
+
+.trilha-option:hover {
+    border-color: #e43a12; /* Cor da borda */
+}
+
+/* Estilos para os campos de upload */
+.file-upload {
+    display: flex; /* flexbox */
+    flex-direction: column; /* Coluna */
+    align-items: center; /* Centraliza os elementos */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    width: 700px; /* Largura */
+    height: auto; /* Altura */
+    border: 2px dashed #ccc;   /* Cor da borda */
+    border-radius: 8px; /* Arredonda a borda */
+    padding: 20px; /* Espaçamento interno */
+    transition: border-color 0.3s; /* Animação ao passar o mouse */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o botão*/
+    margin: 0 auto; /* Centraliza o botão */
+    gap: 10px; /* Espaçamento entre os elementos */
+}
+
+.file-upload img {
+    width: 100px;   /* Largura da imagem */
+    height: 100px; /* Altura da imagem */
+    object-fit: cover; /* Ajusta a imagem ao tamanho do container */
+    transition: transform 0.3s; /* Animação ao passar o mouse */
+}
+
+.file-upload:hover img {
+    transform: scale(0.9); /* Diminui a imagem ao passar o mouse */
+}
+
+.file-upload:hover {
+    border-color: #0080ff; /* Cor do botão */
+}
+.modal {
+    display: none; /* Esconder o modal por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para o botão de inscrição */
+.botao-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.inscricao {
+    background-color: #f3541c;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.inscricao:hover {
+    background-color: #d84315;
+}
+.Voltar {
+    width: 80px;
+    height: 25.5px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+}
+.trilhas {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 25px; 
+    padding: 0;
+    border-radius: 8px;
+}
+.custom-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 140px;
+    width: 220px;
+    cursor: pointer;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, background-color 0.3s;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #f3541c;
+    border-color: #f3541c;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✔';
+    font-size: 12px;
+    color: white;
+}
+
+.custom-checkbox.selected {
+    border-color: #f3541c; /* Borda destacada */
+    background-color: #f0f0f0; /* Exemplo de estilo para o estado selecionado */
+}
+
+.custom-checkbox .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.custom-checkbox img {
+    max-width: 30%;
+    height: auto;
+}
+
+.custom-checkbox .texto {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+}
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #f3541c;
+    border-color: #f3541c;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✔';
+    position: absolute;
+    top: 0;
+    left: 25%; 
+    font-size: 12px;
+    color: white;
+    transition: left 0.3s ease; 
+}
+
+.custom-checkbox:hover {
+    border-color: #f3541c;
+}
+
+.custom-checkbox span {
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+}
+.custom-checkbox input[type="radio"] {
+    display: none; /* Esconde o input */
+}
+.custom-checkbox .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
