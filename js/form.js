@@ -16,11 +16,7 @@ document.querySelectorAll('.custom-checkbox').forEach((checkboxContainer) => {
         checkboxContainer.classList.add('selected');
     });
 });
-// validação de cpf 
-let cpf = document.querySelector("#cpf");
-cpf.addEventListener("blur", function(){
-   if(cpf.value) cpf.value = cpf.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
-});
+
 
 //botão de enviar.
 document.addEventListener('DOMContentLoaded', function () {

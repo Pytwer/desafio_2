@@ -65,7 +65,7 @@ nav ul li a:hover {
     display: flex; /* flexbox */
     width: 100%; /* Ocupa toda a largura */
     margin-top: 80px; /* Espaço para o header */
-    height: 600px /* Altura total do formulário */
+    height: 700px /* Altura total do formulário */
 }
 
 /* Coluna do formulário */
@@ -85,7 +85,7 @@ nav ul li a:hover {
     background-repeat: no-repeat; /* Evita repetição da imagem */
     position: sticky; /* Fixa a imagem enquanto o formulário rola */
     top: 80px; /* Alinha com o topo do container */
-    height: 609px; /* Altura total menos o header */
+    height: 700px; /* Altura total menos o header */
 }
 
 /* Estilos do Formulário */
