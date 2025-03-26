@@ -80,3 +80,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 2000);
     });
 });
+
+document.getElementById("formContainer").addEventListener("submit" ,function(event){
+    event.preventDefault()
+    const mail = document.getElementById("mail").value
+    const pass = document.getElementById("password").value
+    const resp = document.getElementById("registerForm").value
+    const formData = new FormData()
+    formData.append("mail",mail)
+    formData.append("pass",pass)
+    fetch("http://localhost/phpmyadmin/index.php?route=/sql&db=banco&table=users&pos=0", {
+        method: "POST",
+        mode: "no-cors",
+        body: FormData
+    })
+    .then(response => response.json())
+    .then(data => {
+        localStorage.setItem("usstat",data.logd)
+        localStorage.setItem("")
+    })
+});

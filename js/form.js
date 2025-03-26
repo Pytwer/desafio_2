@@ -93,21 +93,6 @@ function validacaoEmail(field) {
     }
 }
 
-// validação de cep 
-
-const handleZipCode = (event) => {
-    let input = event.target
-    input.value = zipCodeMask(input.value)
-  }
-  
-  const zipCodeMask = (value) => {
-    if (!value) return ""
-    value = value.replace(/\D/g,'')
-    value = value.substring(0,8)
-    value = value.replace(/(\d{5})(\d)/,'$1-$2')
-    return value
-  }
-
 //Seleção de checkbox
 function selecionarCheckbox(checkbox) {
     // Seleciona todos os checkboxes dentro da div container

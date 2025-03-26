@@ -15,28 +15,7 @@ body {
 
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px ;
-    background-color: #4f09f3;
-    color: white;
-    position: fixed; /* Fixa o header no topo */
-    width: 97%;
-    top: 0;
-    z-index: 1000; /* Garante que o header fique acima de tudo */
-}
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
-
-header .logo img {
-    height: 35px;
-    margin-right: 10px;
-}
 
 nav ul {
     list-style: none;
@@ -64,8 +43,7 @@ nav ul li a:hover {
 .container {
     display: flex; /* flexbox */
     width: 100%; /* Ocupa toda a largura */
-    margin-top: 80px; /* Espaço para o header */
-    height: 700px /* Altura total do formulário */
+    height: 650px; /* Altura total do formulário */
 }
 
 /* Coluna do formulário */
@@ -85,7 +63,7 @@ nav ul li a:hover {
     background-repeat: no-repeat; /* Evita repetição da imagem */
     position: sticky; /* Fixa a imagem enquanto o formulário rola */
     top: 80px; /* Alinha com o topo do container */
-    height: 700px; /* Altura total menos o header */
+    height: auto; /* Altura total menos o header */
 }
 
 /* Estilos do Formulário */

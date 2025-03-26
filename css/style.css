@@ -57,8 +57,8 @@ nav ul li a:hover {
 
 .hero {
     position: relative;
-    height: 90vh; /* Altura total da tela */
-    min-height: 700px; /* Fallback para telas menores */
+    height: 10vh; /* Altura total da tela */
+    min-height: 571px; /* Fallback para telas menores */
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: flex-end; /* Alinha o conteúdo no FINAL (baixo) */
@@ -85,7 +85,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-left: 200px;
+    padding-left: 220px;
     gap: 20px; /* Espaço entre os botões */
     
 }
