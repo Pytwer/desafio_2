@@ -120,3 +120,42 @@ window.onload=function(){
         mensagem() ;
     };
 }
+document.getElementById('inscricaoForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Coletar dados do formulário
+    const formData = {
+        nome: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        cpf: document.getElementById('cpf').value.replace(/\D/g, ''),
+        // ... outros campos do formulário
+    };
+
+    try {
+        // 1. Envia para cadastro (usando email e CPF como credenciais)
+        const response = await fetch('/php/register.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: formData.email,
+                cpf: formData.cpf,
+                dados_completos: formData // Envia todos os dados para armazenamento
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // Mostra modal de sucesso
+            document.getElementById('confirmationModal').style.display = 'block';
+            
+            // Opcional: Redireciona para login após cadastro
+            // window.location.href = '/login.html';
+        } else {
+            alert('Erro no cadastro: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao enviar formulário');
+    }
+});

@@ -22,24 +22,12 @@
                 <button type="submit" id="loginButton">Entrar</button>
             </form>
             <div class="register-link">
-                Não está cadastrado? <a id="showRegisterForm" href="#">Cadastrar</a>
+                Não está cadastrado? <a id="showRegisterForm" href="/pgs/inscrição.html">Cadastrar</a>
             </div>
             <p id="loginMessage" style="color: red; display: none;"></p>
         </div>
     
-        <!-- Formulário de Cadastro -->
-        <div id="registerForm" style="display: none;">
-            <h2>Cadastro</h2>
-            <form id="registerFormElement">
-                <input type="text" id="registerCpf" placeholder="CPF" required maxlength="14" oninput="formatCPF(this)" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF válido (formato: 000.000.000-00)">
-                <input type="password" id="registerPassword" placeholder="Cadastrar Senha" required minlength="6" maxlength="10">
-                <button type="submit" id="registerButton">Salvar</button>
-            </form>
-            <div class="login-link">
-                Já tem uma conta? <a id="showLoginForm" href="#">Login</a>
-            </div>
-            <p id="registerMessage" style="color: green; display: none;"></p>
-        </div>
+
     </div>
     
 </body>
