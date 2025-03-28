@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
         // Verificar se existe um usuário com esses dados
         const user = users.find(u => u.cpf === cpf && u.password === password);
         
+       // No trecho onde o login é bem-sucedido
         if (user) {
             loginMessage.style.display = "none";
-            // Armazena na sessionStorage que o usuário está logado
             sessionStorage.setItem('loggedInUser', JSON.stringify(user));
-            // Redirecionar para o MENU em vez do formulário
-            window.location.href = "/pgs/menu.html"; // Altere para o caminho correto
+            
+            window.location.href = "/pgs/menu.html"; 
         }
         else {
             loginMessage.textContent = "CPF ou senha incorretos.";

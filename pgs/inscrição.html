@@ -9,11 +9,11 @@
 </head>
 <body>
   
-    <!-- Modal de confirmação -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <p>Formulário enviado com sucesso!</p>
-            <button id="closeModal">Fechar</button>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <img src="https://media.tenor.com/g-v6qGzl12YAAAAj/grind-grinding.gif" alt="Carregando" class="loading-image">
+            <p class="loading-text">Enviando...</p>
         </div>
     </div>
     <div class="container">
@@ -28,7 +28,7 @@
                     </div>  
                     <h1>Formulário de Inscrição</h1>
                     <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
-                    <form action="/banco/config.php" method="post" id="inscricaoForm">
+                    <form id="inscricaoForm">
                         <h2>Informações do participante</h2>
 
                         <label for="name">Nome completo:</label>
@@ -110,10 +110,11 @@
                         <h2>Comprovante de residência</h2>
 
                         <div class="row">
-                            <div>
+                            <div> 
                                 <div class="file-upload">
-                                    <img id="residence-image" src="/img/upload.png" alt="Upload Comprovante de Residência" onclick="document.getElementById('residence').click()">
-                                </div>  
+                                    <img id="residence-image" src="/img/upload.png" alt="Upload Comprovante de Residência" onclick="document.getElementById('residence-proof').click()">
+                                    <input type="file" id="residence-proof" name="residence-proof" required style="display: none;">
+                                </div>    
                             </div>
                         </div>
 

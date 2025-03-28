@@ -1,7 +1,18 @@
 /* Estilos Gerais */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body {
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+*{
     font-family: 'Poppins', sans-serif;
+}
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,31 +23,6 @@ body {
     flex-direction: column;
     height: 100vh; /* Faz o body ocupar toda a altura da tela */
     overflow-y: hidden; /* Adiciona scrollbar */
-
-}
-
-
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #1abc9c;
 }
 
 /* Layout de duas colunas */
@@ -138,10 +124,6 @@ button:hover { /* Cor ao passar o mouse */
 input[type="file"] {
     padding: 5px; /* Espaçamento interno */
 }
-
-/* Estilos para as opções de trilhas */
-
-
 .trilha-option {
     display: flex; /* flexbox */
     flex-direction: column; /* Coluna */
@@ -171,16 +153,12 @@ input[type="file"] {
     text-align: center; /* Alinhado ao centro */
     color: #333; /* Cor do texto */
 }
-
 .trilha-option.selected {
     border-color: #e43a12; /* Cor da borda */
 }
-
 .trilha-option:hover {
     border-color: #e43a12; /* Cor da borda */
 }
-
-/* Estilos para os campos de upload */
 .file-upload {
     display: flex; /* flexbox */
     flex-direction: column; /* Coluna */
@@ -196,63 +174,24 @@ input[type="file"] {
     margin: 0 auto; /* Centraliza o botão */
     gap: 10px; /* Espaçamento entre os elementos */
 }
-
 .file-upload img {
     width: 100px;   /* Largura da imagem */
     height: 100px; /* Altura da imagem */
     object-fit: cover; /* Ajusta a imagem ao tamanho do container */
     transition: transform 0.3s; /* Animação ao passar o mouse */
 }
-
 .file-upload:hover img {
     transform: scale(0.9); /* Diminui a imagem ao passar o mouse */
 }
-
 .file-upload:hover {
     border-color: #0080ff; /* Cor do botão */
 }
-.modal {
-    display: none; /* Esconder o modal por padrão */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.modal-content button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.modal-content button:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos para o botão de inscrição */
 .botao-container {
     display: flex;
     justify-content: flex-end;
     gap: 30px;
     margin-top: 30px;
 }
-
 .inscricao {
     background-color: #f3541c;
     border: none;
@@ -264,7 +203,6 @@ input[type="file"] {
     font-size: 14px;
     cursor: pointer;
 }
-
 .inscricao:hover {
     background-color: #d84315;
 }
@@ -274,7 +212,6 @@ input[type="file"] {
     margin-right: 8px;
     vertical-align: middle;
 }
-
 .voltar {
     display: flex;
     align-items: center;
@@ -302,7 +239,6 @@ input[type="file"] {
     margin-top: 10px;
     position: relative;
 }
-
 .custom-checkbox input[type="checkbox"] {
     position: absolute;
     top: 10px;
@@ -312,7 +248,6 @@ input[type="file"] {
     cursor: pointer;
     opacity: 0;
 }
-
 .custom-checkbox .checkmark {
     position: absolute;
     top: 10px;
@@ -326,7 +261,6 @@ input[type="file"] {
     align-items: center;
     justify-content: center;
 }
-
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
     background-color: #f3541c;
     border-color: #f3541c;
@@ -395,4 +329,45 @@ input[type="file"] {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}/* Adicione ao seu arquivo form.css */
+/* Estilos do overlay de carregamento */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
+.loading-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.loading-content {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+.loading-video {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    animation: spin 1.5s linear infinite;
+}
+.loading-text {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+}
+
+
