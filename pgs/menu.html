@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu Principal</title>
+    <link rel="stylesheet" href="/css/menu.css">
 </head>
 <body>
-    
+    <div class="menu-container">
+        <h1>Bem-vindo ao Programa Trilhas</h1>
+        <div class="menu-options">
+            <a href="/pgs/inscrição.html" class="menu-button">Editar Inscrição</a>
+            <a href="/index.html" class="menu-button logout">Sair</a>
+        </div>
+    </div>
+    <script>
+        // Adicione logout ao clicar em Sair
+        document.querySelector('.logout').addEventListener('click', function() {
+            sessionStorage.removeItem('loggedInUser');
+        });
+    </script>
 </body>
 </html>

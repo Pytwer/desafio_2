@@ -1,67 +1,105 @@
-// Função para criar o banco (chamar uma vez no início do sistema)
-async function criarBancoDados() {
-    try {
-        const response = await fetch('php/criar_banco.php');
-        const data = await response.json();
-        
-        if (data.success) {
-            console.log('Banco de dados pronto:', data.database);
-        } else {
-            console.error('Erro ao criar banco:', data.message);
-            alert('Erro na inicialização do sistema');
-        }
-    } catch (error) {
-        console.error('Falha na comunicação:', error);
-        alert('Não foi possível conectar ao servidor');
-    }
-}
-
-// Cadastro
-document.getElementById("registerForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    criarBancoDados();
-    const nome = document.getElementById("registerNome").value;
-    const email = document.getElementById("registerEmail").value;
-    const cpf = document.getElementById("registerCpf").value.replace(/\D/g, '');
+document.addEventListener("DOMContentLoaded", function() {
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const showRegisterForm = document.getElementById("showRegisterForm");
+    const showLoginForm = document.getElementById("showLoginForm");
+    const loginButton = document.getElementById("loginButton");
+    const registerButton = document.getElementById("registerButton");
+    const loginMessage = document.getElementById("loginMessage");
     const registerMessage = document.getElementById("registerMessage");
 
-    // Validações
-    if (cpf.length !== 11) {
-        showMessage(registerMessage, "CPF deve ter 11 dígitos");
-        return;
-    }
+    // Armazenar dados dos usuários (persistirá enquanto a página não for recarregada)
+    let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    if (!validateEmail(email)) {
-        showMessage(registerMessage, "Email inválido");
-        return;
-    }
+    // Mostrar o formulário de cadastro
+    showRegisterForm.addEventListener("click", function(event) {
+        event.preventDefault();
+        loginForm.style.display = "none";
+        registerForm.style.display = "block";
+        registerMessage.style.display = "none";
+    });
 
-    try {
-        const response = await fetch('php/register.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nome, email, cpf })
-        });
+    // Mostrar o formulário de login
+    showLoginForm.addEventListener("click", function(event) {
+        event.preventDefault();
+        registerForm.style.display = "none";
+        loginForm.style.display = "block";
+        loginMessage.style.display = "none";
+    });
 
-        const data = await response.json();
+    // Lidar com o envio do formulário de login
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const cpf = document.getElementById("loginCpf").value.replace(/\D/g, '');
+        const password = document.getElementById("loginPassword").value;
 
-        if (data.success) {
-            showMessage(registerMessage, "Cadastro realizado! Use seu email e CPF para login", true);
-            setTimeout(() => {
-                document.getElementById("registerForm").reset();
-                toggleForms(true); // Volta para o login
-            }, 3000);
-        } else {
-            showMessage(registerMessage, data.message || "Erro no cadastro");
+        // Verificar se existe um usuário com esses dados
+        const user = users.find(u => u.cpf === cpf && u.password === password);
+        
+        if (user) {
+            loginMessage.style.display = "none";
+            // Armazena na sessionStorage que o usuário está logado
+            sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+            // Redirecionar para o MENU em vez do formulário
+            window.location.href = "/pgs/menu.html"; // Altere para o caminho correto
         }
-    } catch (error) {
-        showMessage(registerMessage, "Erro de conexão com o servidor");
-        console.error(error);
-    }
-});
+        else {
+            loginMessage.textContent = "CPF ou senha incorretos.";
+            loginMessage.style.display = "block";
+        }
+    });
 
-// Função auxiliar para validar email
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
+    // Lidar com o envio do formulário de cadastro
+    registerForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const cpf = document.getElementById("registerCpf").value.replace(/\D/g, '');
+        const password = document.getElementById("registerPassword").value;
+
+        // Verificação se os campos estão vazios
+        if (!cpf || !password) {
+            registerMessage.textContent = "Por favor, preencha todos os campos.";
+            registerMessage.style.display = "block";
+            return;
+        }
+
+        // Validação do CPF
+        if (cpf.length !== 11) {
+            registerMessage.textContent = "CPF inválido. Deve conter 11 dígitos.";
+            registerMessage.style.display = "block";
+            return;
+        }
+
+        // Validação da Senha
+        if (password.length < 6 || password.length > 10) {
+            registerMessage.textContent = "A senha deve ter entre 6 e 10 dígitos.";
+            registerMessage.style.display = "block";
+            return;
+        }
+
+        // Verificar se o CPF já está cadastrado
+        if (users.some(u => u.cpf === cpf)) {
+            registerMessage.textContent = "Este CPF já está cadastrado.";
+            registerMessage.style.display = "block";
+            return;
+        }
+
+        // Adicionar novo usuário
+        users.push({ cpf, password });
+        localStorage.setItem('users', JSON.stringify(users));
+        
+        registerMessage.textContent = "Cadastro realizado com sucesso! Você pode fazer login agora.";
+        registerMessage.style.color = "green";
+        registerMessage.style.display = "block";
+
+        // Limpar formulário
+        document.getElementById("registerCpf").value = "";
+        document.getElementById("registerPassword").value = "";
+
+        // Voltar para o formulário de login após 2 segundos
+        setTimeout(() => {
+            registerForm.style.display = "none";
+            loginForm.style.display = "block";
+            registerMessage.style.display = "none";
+        }, 2000);
+    });
+});
