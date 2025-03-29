@@ -40,13 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (validateForm()) {
             // Mostra o overlay de carregamento
             loadingOverlay.classList.add('active');
-            
             // Simula o envio dos dados (substitua por AJAX real se necessário)
             setTimeout(function() {
                 // Mostra mensagem de conclusão antes de redirecionar
                 document.querySelector('.loading-text').textContent = 'Inscrição concluída! Redirecionando...';
-                document.querySelector('.loading-image').style.animation = 'none';
-                
+                document.querySelector('.loading-image').style.animation = 'none';   
                 // Redireciona após breve pausa
                 setTimeout(function() {
                     window.location.href = '/pgs/menu.html';
@@ -56,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     function validateForm() {
         let isValid = true;
-        
         // Valida campos de texto obrigatórios
         const requiredFields = form.querySelectorAll('[required]:not([type="file"])');
         requiredFields.forEach(field => {
@@ -65,18 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
         });
-    
         // Valida arquivos
         if (!validateFile('identity') || !validateFile('residence-proof')) {
             isValid = false;
         }
-    
-        // Valida checkboxes de termos e trilhas
-        // ... (seu código existente)
-    
         return isValid;
     }
-    
     function validateFile(inputId) {
         const fileInput = document.getElementById(inputId);
         const uploadContainer = fileInput.closest('.file-upload');
@@ -101,13 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 field.classList.remove('invalid');
             }
         });
-
         // Valida checkboxes de termos
         const terms = form.querySelectorAll('.terms [type="checkbox"]');
         terms.forEach(term => {
             if (!term.checked) isValid = false;
         });
-
         return isValid;
     }
 });
